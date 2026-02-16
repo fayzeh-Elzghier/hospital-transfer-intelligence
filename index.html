@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hospital Transfer Intelligence</title>
+  <meta name="description" content="AI powered prototype for clinical transfer decision support using synthetic data and NLP." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container">
+
+    <div class="brand">
+      <div class="logo">HTI</div>
+      <div>
+        <h1>Hospital Transfer Intelligence</h1>
+        <p class="subtitle">
+          AI powered prototype for clinical transfer decision support system
+        </p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn primary"
+         href="https://github.com/fayzeh-Elzghier/hospital-transfer-intelligence"
+         target="_blank">View Repository</a>
+
+      <a class="btn"
+         href="https://github.com/fayzeh-Elzghier/hospital-transfer-intelligence/blob/main/app.py"
+         target="_blank">View Streamlit App</a>
+
+      <a class="btn"
+         href="https://github.com/fayzeh-Elzghier/hospital-transfer-intelligence/blob/main/README.md"
+         target="_blank">View README</a>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill">NLP</span>
+      <span class="pill">Decision Support System</span>
+      <span class="pill">Synthetic Data</span>
+      <span class="pill">Explainable Ranking</span>
+      <span class="pill">Hospital Capacity Modeling</span>
+    </div>
+
+  </div>
+</header>
+
+<main class="container">
+
+<section class="grid">
+
+  <div class="card">
+    <h2>Problem</h2>
+    <p>
+      During high pressure periods inter hospital transfer decisions may be delayed
+      or inconsistent due to limited visibility of hospital capacity and specialty
+      availability.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Proposed Solution</h2>
+    <p>
+      This prototype demonstrates an AI assisted workflow that analyzes medical
+      report text to infer severity and required specialty then ranks hospitals
+      using capacity load distance and specialty match.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Prototype Features</h2>
+    <ul>
+      <li>Synthetic hospitals dataset</li>
+      <li>Synthetic medical transfer cases</li>
+      <li>NLP based specialty and severity prediction</li>
+      <li>Explainable hospital ranking engine</li>
+      <li>Interactive Streamlit demo</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Data Governance</h2>
+    <p>
+      The current version uses synthetic data only. Real operational data can be
+      integrated after administrative approval under proper privacy controls.
+    </p>
+  </div>
+
+</section>
+
+<section class="card wide">
+
+  <h2>System Workflow</h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Input</h3>
+        <p>Transfer request and medical report text</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>NLP Analysis</h3>
+        <p>Infer severity level and required specialty</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>Hospital Ranking</h3>
+        <p>Score hospitals based on capacity load distance and match</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h3>Recommendation</h3>
+        <p>Return ranked hospitals with clear reasoning</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="card wide">
+
+  <h2>Run Locally</h2>
+
+  <pre><code>
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run app.py
+  </code></pre>
+
+</section>
+
+<footer class="footer">
+  <p>
+    Proof of concept prototype for administrative review before requesting real hospital data.
+  </p>
+</footer>
+
+</main>
+
+</body>
+</html>
