@@ -29,14 +29,18 @@ def generate_hospitals(n=8, seed=7):
     rows = []
     for i in range(n):
         name = f"Hospital_{i+1}"
-        # each hospital has 2-4 specialties
-        specs = rng.choice(SPECIALTIES, size=int(rng.integers(2,5)), replace=False).tolist()
+        specs = rng.choice(SPECIALTIES, size=int(rng.integers(2, 5)), replace=False).tolist()
         beds_total = int(rng.integers(40, 220))
-        beds_free = int(rng.integers(0, max(1, beds_total//4)))
+        beds_free = int(rng.integers(0, max(1, beds_total // 4)))
         icu_total = int(rng.integers(4, 25))
-        icu_free = int(rng.integers(0, max(1, icu_total//3)))
-        load = float(np.clip(1 - (beds_free / max(1, beds_total)), 0, 1))  # 0 low load, 1 high load
+        icu_free = int(rng.integers(0, max(1, icu_total // 3)))
+        load = float(np.clip(1 - (beds_free / max(1, beds_total)), 0, 1))
         distance_km = float(rng.integers(2, 60))
+
+        # Synthetic coordinates (Palestine-ish range) for demo map
+        lat = float(rng.uniform(31.35, 32.60))
+        lon = float(rng.uniform(34.90, 35.60))
+
         rows.append({
             "hospital": name,
             "specialties": ", ".join(specs),
@@ -45,7 +49,9 @@ def generate_hospitals(n=8, seed=7):
             "icu_total": icu_total,
             "icu_free": icu_free,
             "load": round(load, 3),
-            "distance_km": distance_km
+            "distance_km": distance_km,
+            "lat": lat,
+            "lon": lon
         })
     return pd.DataFrame(rows)
 
